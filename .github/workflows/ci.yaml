@@ -170,7 +170,7 @@ jobs:
     contents: read
     security-events: write
     actions: read
-    
+
    steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -180,11 +180,11 @@ jobs:
 
     - name: Build the Docker image
       working-directory: ./quiz-app
-      run: docker build -t ${{ secrets.DOCKER_USERNAME }}/backend-api .
+      run: docker build -t ${{ secrets.DOCKER_USERNAME }}/frontend-js .
 
     - name: Push the Docker image
       working-directory: ./quiz-app
-      run: docker push ${{ secrets.DOCKER_USERNAME }}/backend-api
+      run: docker push ${{ secrets.DOCKER_USERNAME }}/frontend-js
 
 
     - name: Run Trivy vulnerability scanner
